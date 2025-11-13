@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Image Gallery</title>
+  <link rel="stylesheet" href="ima.css" />
+</head>
+<body>
+  <header>
+    <h1>🌌  Image Gallery</h1>
+    <div class="controls">
+      <input type="file" id="fileInput" multiple accept="image/*" hidden>
+      <button id="addPhoto">+ Add Photo</button>
+      <select id="filterSelect">
+        <option value="none">No Filter</option>
+        <option value="grayscale(100%)">Grayscale</option>
+        <option value="sepia(100%)">Sepia</option>
+        <option value="blur(2px)">Blur</option>
+        <option value="contrast(150%)">High Contrast</option>
+      </select>
+      <input type="text" id="searchInput" placeholder="🔍 Search images..." />
+    </div>
+  </header>
+
+  <main id="gallery" class="gallery"></main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-controls">
+      <button id="prev">&#10094;</button>
+      <button id="next">&#10095;</button>
+    </div>
+    <div class="lightbox-actions">
+      <button id="editBtn">✏️ Edit</button>
+      <button id="deleteBtn">🗑️ Delete</button>
+      <button id="shareBtn">📤 Share</button>
+    </div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <h2>Edit Image</h2>
+      <label>Title:</label>
+      <input type="text" id="editTitle">
+      <label>Category:</label>
+      <input type="text" id="editCategory">
+      <button id="saveEdit">Save</button>
+      <button id="cancelEdit">Cancel</button>
+    </div>
+  </div>
+
+  <script src="imag.js"></script>
+</body>
+</html>
